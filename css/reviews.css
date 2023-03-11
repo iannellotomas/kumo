@@ -1,0 +1,213 @@
+.reviews {
+    width: calc(100% - 16%);
+    padding: 20px 8% 80px 8%;
+    background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    margin: 12vh 0 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.reviews h2 {
+    z-index: 2;
+    color: #1f1f1f;
+}
+
+.reviews h2 span {
+    color: #de5d77;
+}
+
+.reviews-box {
+    display: flex;
+    gap: 70px 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.review {
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    background: #ffffffd0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.review-quote {
+    padding: 10px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    font-size: 24px;
+    fill: #ffffffd2;
+    background: var(--red);
+    border-radius: 50%;
+}
+
+.review__profile {
+    display: flex;
+    gap: 10px;
+}
+
+.review__profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    user-select: none;
+    object-fit: cover;
+}
+
+.review__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+.review h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.review h4 {
+    font-size: .9rem;
+    color: #707070;
+    margin: 0;
+    font-weight: 600;
+}
+
+.review__content {
+    padding: 15px;
+    border-radius: 6px;
+    background: #4444442d;
+    margin: 20px 0 0 0;
+    position: relative;
+    hyphens: auto;
+    color: #383838;
+    line-height: 1.3rem;
+    font-style: italic;
+    flex-grow: 1;
+}
+
+.review__content:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 10px;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    background: #4444442d;
+    top: -10px;
+    left: 17px;
+    z-index: 1;
+}
+
+.review__buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0 0 0;
+    position: relative;
+}
+
+.review__buttons button {
+    display: flex;
+    width: 70px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 100px;
+}
+
+.review__buttons button box-icon{
+    font-size: 24px;
+    fill: #707070;
+    position: relative;
+    transition: .3s ease;
+}
+
+.review__buttons button p {
+    font-size: .85rem;
+    margin: 0;
+    color: #707070;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: .3s ease;
+}
+
+.review__buttons button:hover * {
+    color: var(--btnColor);
+    fill: var(--btnColor);
+}
+
+.review__buttons button.review--active * {
+    color: var(--btnColor);
+    fill: var(--btnColor);
+}
+
+.share-modal {
+    height: 0;
+    position: absolute;
+    background: #ffffff1e;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.185);
+    left: 80px;
+    top: -140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 100 !important;
+    transition: .5s ease;
+}
+
+.share__item {
+    width: 120px;
+    padding: 10px 0;
+    margin: 0 5px;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.share__item:hover {
+    background: #83838357;
+}
+
+.share__item img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.share__item p {
+    font-size: 14px;
+    font-weight: 700;
+    color: #252424;
+    margin: 0;
+}
+
+.share-modal--show {
+    height: 190px;
+}

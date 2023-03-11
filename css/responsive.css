@@ -1,0 +1,144 @@
+@media screen and (max-width: 900px) {
+    .footer__right {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .nav-menu {
+        display: flex;
+    }
+
+    .nav__center {
+        position: fixed;
+        z-index: 95;
+        height: max-content;
+        right: 0;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        margin: 0;
+        padding-top: 120px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        transform: translateX(120%);
+        backdrop-filter: blur(0px);
+        transition: .3s ease;
+        animation: navCenter .5s ease forwards;
+    }
+
+    .nav__center li {
+        height: 30px;
+    }
+
+    .nav__center li:after {
+        bottom: 0;
+        width: 70%;
+    }
+
+    .nav__center--show {
+        animation: navCenterActive .8s ease forwards;
+    }
+
+    .product__like {
+        opacity: 1;
+    }
+
+    .nav__center--show + .nav__right .nav-icon:not(.nav-menu) {
+        opacity: 0;
+        transition-delay: 0;
+    }
+}
+
+@media screen and (max-width: 631px) {
+    
+    main > h2, main h1, main > p {
+        width: 280px;
+    }
+    
+    .product {
+        flex-grow: 1;
+        height: 520px;
+    }
+
+    .product__image img {
+        height: 400px;
+        object-fit: auto;
+    }
+
+    nav > img {
+        height: 20px;
+    }
+
+    nav {
+        height: 60px !important;
+    }
+
+    footer {
+        padding-top: 8vh;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__right, .footer__left {
+        width: 90%;
+    }
+
+    .social {
+        justify-content: left;
+        gap: 20px;
+    }
+
+    .footer__left > img {
+        height: 30px;
+        display: flex;
+        width: max-content;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .review {
+        width: 250px;
+    }
+
+    .review-quote {
+        display: none;
+    }
+
+    .share-modal {
+        left: 40px;
+    }
+}
+
+@keyframes navCenter {
+    0% {
+        transform: translateX(0%);
+        backdrop-filter: blur(30px);
+    }
+    100% {
+        transform: translateX(120%);
+        backdrop-filter: blur(0);
+    }
+}
+
+@keyframes navCenterActive {
+    50% {
+        transform: translateX(0%);
+        backdrop-filter: blur(2px);
+    }
+
+    100% {
+        transform: translateX(0%);
+        backdrop-filter: blur(30px);
+    }
+}

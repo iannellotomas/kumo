@@ -1,0 +1,244 @@
+nav {
+    width: calc(100% - 16%);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: .3s ease;
+}
+
+nav:before {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.144);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.637); 
+    z-index: -1;
+}
+
+.nav--scrolled {
+    height: 80px;
+}
+
+.nav--scrolled:before {
+    height: 100%;
+}
+
+nav * {
+    z-index: 5 !important;
+}
+
+nav > img {
+    height: 30px;
+}
+
+.nav__center {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    color: rgb(37, 37, 37);
+    font-size: 16px;
+    height: 100%;
+}
+
+.nav__center li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    letter-spacing: 1px;
+    transition: .3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.nav__center li:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: var(--red);
+    position: absolute;
+    bottom: 25px;
+    border-radius: 10px;
+    transform: translateX(-110%);
+    transition: .3s ease;
+}
+
+.nav__center li:hover, .nav-active {
+    color: var(--red);
+}
+
+.nav-active { pointer-events: none;}
+
+.nav__center li:hover:after,
+li.nav-active:after {
+    transform: translateX(0%);
+}
+
+
+.nav__right {
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.nav-icon {
+    display: flex;
+    padding: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    z-index: 90;
+    transition: .3s ease;
+    transition-delay: .3s;
+}
+
+.nav-icon ion-icon {
+    transition: .3s ease;
+}
+
+.nav-menu {
+    display: none;
+    z-index: 97;
+}
+
+.nav-icon:hover ion-icon {
+    transform: scale(.85);
+}
+
+.nav-icon::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    transform: scale(0);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.nav-icon:hover::before {
+    transform: scale(1);
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.nav-icon:hover {
+    color: #f6f6f6;
+}
+
+main {
+    margin-top: 100px;
+    width: calc(100% - 16%);
+    height: calc(100% - 100px);
+    padding: 30px 8%;
+    position: relative;
+}
+
+.content-info {
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--darkBlue);
+}
+
+.content-info h2 {
+    font-size: 1rem;
+    color: var(--red);
+    margin: 0 0 15px 0;
+}
+
+.content-info>p {
+    font-size: 18px;
+    font-style: italic;
+    color: #3a3a3a;
+    font-weight: 600;
+    margin: 20px 0 30px 0;
+}
+
+.content-info button {
+    display: flex;
+    height: 50px;
+    width: 170px !important;
+    outline: none;
+    border: none;
+    box-shadow: 0 5px 15px #3a3a3a3b;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Josefin Sans';
+    overflow: hidden;
+    position: relative;
+    border-radius: 100px;
+}
+
+button .inline {
+    display: inline-flex;
+    gap: 5px;
+    transition: .5s ease;
+}
+
+.content-info button p {
+    margin: 0;
+    color: #111111;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+
+.content-info button:before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background: var(--red);
+    position: absolute;
+    right: 0;
+    transition: .5s ease;
+    border-radius: 100px;
+}
+
+.content-info button:hover {
+    border-color: transparent;
+}
+
+.content-info button:hover * {
+    color: #fff !important;
+}
+
+.content-info button:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+.content-info button:hover .inline {
+    transform: translateX(10px);
+}
+
+.content-info button:hover .inline ion-icon {
+    opacity: 0;
+    width: max-content;
+}

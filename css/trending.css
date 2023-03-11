@@ -1,0 +1,145 @@
+.trending {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trending h2 span {
+    color: var(--red);
+}
+
+.products-box {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 250px;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product__image {
+    display: flex;
+    position: relative;
+}
+
+.product__image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: .3s ease;
+}
+
+.product__image img:hover {
+    transform: scale(.95);
+}
+
+.product__image .tag {
+    width: max-content;
+    padding: 5px 10px 3px 10px;
+    background: var(--lightGreen);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    user-select: none;
+}
+
+.product__info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 5px;
+    position: relative;
+}
+
+.product__info * {
+    margin: 0;
+}
+
+.product__info h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(59, 59, 59);
+    transition: .3s ease;
+}
+
+.product__info p {
+    color: rgb(26, 26, 26);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.rating {
+    display: flex;
+    width: max-content;
+    height: 30px;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.rating ion-icon {
+    font-size: 24px;
+    color: var(--orange);
+    pointer-events: none;
+}
+
+.product__like {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: .3s ease;
+    display: flex;
+}
+
+.product:hover .product__like {
+    opacity: 1;
+}
+
+.product__like ion-icon {
+    font-size: 24px;
+    fill: transparent;
+    color: var(--darkBlue);
+    stroke-width: 30;
+    transition: ease .3s;
+}
+
+.product__like:hover ion-icon {
+    color: var(--red);
+}
+
+.product--liked .product__like {
+    opacity: 1;
+}
+
+.product--liked .product__like ion-icon {
+    animation: liked ease .3s;
+    fill: var(--red);
+    color: var(--red);
+}
+
+@keyframes liked {
+    0% { transform: scale(1) }
+    70% { transform: scale(1.2) }
+    90% { transform: scale(1.1) }
+    100% { transform: scale(1) }
+}
